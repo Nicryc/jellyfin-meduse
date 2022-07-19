@@ -1,0 +1,19 @@
+/* Change the media played indicators color to green */
+.playedIndicator {
+    background: #5dd000;
+}
+
+/* Change the media available sources indicators color to transparent black */
+.mediaSourceIndicator {
+    background: #00000058;
+}
+
+/* Hide the sync play button in the header bar */
+/* .headerSyncButton {
+    display: none;
+} */
+
+/* Create a color gradient for the title banner on film pages or TV show pages */
+.detailPagePrimaryContainer {
+    background: linear-gradient(to right, #03315c, #281a31);
+}

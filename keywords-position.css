@@ -1,0 +1,25 @@
+/* Remove the "position: relative" of the parent .detailPagePrimaryContent */
+.detailPageSecondaryContainer .detailPageContent .detailPagePrimaryContent {
+    position: unset;
+}
+
+/* Add the "position: relative" to another parent */
+.detailPageSecondaryContainer .detailPageContent {
+    position: relative;
+}
+
+/* Move the keywords list below the poster */
+.detailPageSecondaryContainer .detailPageContent .detailPagePrimaryContent .itemTags {
+    position: absolute;
+    left: 3.3%;
+    top: 50%;
+    width: 25vw;
+}
+
+/* Move the metadata providers list below the poster */
+.detailPageSecondaryContainer .detailPageContent .detailPagePrimaryContent .itemExternalLinks {
+    position: absolute;
+    left: 3.3%;
+    top: 57%;
+    width: 25vw;
+}

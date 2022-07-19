@@ -1,0 +1,96 @@
+/* Change the inputs (including text areas and select inputs) border color when they are focused */
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+    border-color: #2f5d62 !important;
+}
+
+/* Change the checkboxes border color when they are focused */
+.emby-checkbox:focus:not(:checked)+span+.checkboxOutline {
+    border-color: #2f5d62;
+}
+
+/* Add a border color to text inputs and select inputs when hovering */
+.emby-input:hover,
+.emby-textarea:hover,
+.emby-select:hover {
+    border-color: #2f5d62;
+}
+
+/* Add a border radius for every input including checkboxes, select input, text areas or list containers such as the ones found in "Activité", "Tableau de bord" or in the cast menu or user menu */
+.emby-input,
+.emby-textarea,
+.emby-select,
+.checkboxOutline,
+.paperList,
+.listItem {
+    border-radius: 10px !important;
+}
+
+/* Add minimum height and width for text areas */
+.emby-textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 37.1px;
+}
+
+/* Delete the border between items of some lists */
+.listItem-border {
+    border-width: 0;
+}
+
+/* Add a border radius to list items only for the first and last child, the others stay squared */
+/* .listItem:first-child {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+.listItem:last-child {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+} */
+
+/* Change all checkboxes border color when they are checked */
+.checkboxIcon-checked,
+.emby-checkbox:checked+span+.checkboxOutline {
+    background-color: #2f5d62;
+    border-style: none;
+}
+
+/* Change all checkboxes label color when hovering */
+.emby-checkbox-label:hover {
+    color: #a7c4bc;
+}
+
+/* Increase the height of select inputs when selecting subtitles, audio or video sources */
+.selectSubtitles:not([disabled]),
+.selectAudio:not([disabled]),
+.selectSource:not([disabled]) {
+    padding: .5em 1.9em .5em .5em !important;
+}
+
+/* Align labels after this change */
+.selectSubtitlesContainer,
+.selectAudioContainer,
+.selectSourceContainer {
+    align-items: center;
+}
+
+/* Align select arrow icons after this change */
+.selectSubtitlesContainer .selectArrowContainer,
+.selectAudioContainer .selectArrowContainer,
+.selectSourceContainer .selectArrowContainer {
+    top: 0.5em;
+}
+
+/* Display .paperList even when they're empty and add an explanation text */
+.paperList:empty::after {
+    content: "La liste est vide.";
+    color: #999;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Display the normally hidden .paperList properly */
+.paperList:empty {
+    text-align: center;
+    padding: .5em 1em;
+}

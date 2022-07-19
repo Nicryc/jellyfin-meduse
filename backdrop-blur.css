@@ -1,0 +1,29 @@
+/* Add a blur filter to the background image */
+.backdropImage {
+    filter: blur(50px) saturate(170%) contrast(150%) brightness(50%);
+}
+
+/* Change the opacity of the background image */
+.backgroundContainer.withBackdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Remove the dark background created by .itemBackdrop */
+.layout-desktop .itemBackdrop::after {
+    background: none;
+}
+
+/* Remove the upper background image in media detail pages */
+.itemBackdrop {
+    background-image: none !important;
+}
+
+/* Remove the title section background to make it transparent in media detail pages */
+.detailPagePrimaryContainer {
+    background: none;
+}
+
+/* Remove the header background to make it transparent only in media detail pages */
+.skinHeader.semiTransparent.skinHeader-blurred {
+    background: none;
+}

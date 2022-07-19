@@ -1,0 +1,43 @@
+/* Change the border radius of media cards */
+.cardBox:not(.visualCardBox) .cardImageContainer.cardContent,
+.cardBox:not(.visualCardBox) .cardPadder,
+.card-hoverable:hover .cardOverlayContainer,
+.card-hoverable .cardOverlayContainer,
+.card-hoverable .blurhash-canvas {
+    border-radius: 10px;
+}
+
+/* Change the border radius of device, user or library cards in settings */
+.cardBox.visualCardBox {
+    border-radius: 10px;
+}
+
+/* Fix the border radius when the card contains an upper and a bottom part (like an image and a text) */
+.cardBox.visualCardBox .cardContent {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Make the progress bar (when a film was started) float in the card */
+.itemProgressBar:not(.activeSession .itemProgressBar) {
+    height: 6px;
+    margin: .5em .8em;
+}
+
+/* Put the progress bar at the top of the card */
+.fullInnerCardFooter:not(.activeSession .fullInnerCardFooter) {
+    top: 0;
+}
+
+/* Change the border radius of the progress bar */
+.itemProgressBarForeground:not(.activeSession .itemProgressBarForeground),
+.itemProgressBar:not(.activeSession .itemProgressBar) {
+    border-radius: 10px;
+}
+
+/* Change the color of the progress bar */
+.itemProgressBarForeground:not(.activeSession .itemProgressBarForeground) {
+    background-color: #f7ca18;
+}

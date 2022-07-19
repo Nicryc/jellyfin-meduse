@@ -1,0 +1,122 @@
+/* Change the main color accentuation when hovering buttons */
+@media (hover: hover) and (pointer: fine) {
+    .paper-icon-button-light:hover:not(:disabled) {
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .button-flat.detailButton:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+/* V1 Animation - expanding hover effect */
+@media (hover: hover) and (pointer: fine) {
+    .detailButton:hover:not(:disabled)::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transform-origin: center;
+        transition: .2s;
+    }
+
+    .detailButton:not(:disabled)::before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        z-index: -1
+    }
+}
+
+/* Make the buttons in media detail pages (like play, add to favorite, mark as watched) square */
+.detailButton:not(:disabled) {
+    aspect-ratio: 1/1
+}
+
+/* V2 Animation - shrinking hover effect */
+/*@media (hover: hover) and (pointer: fine) {
+    .detailButton:hover:not(:disabled) {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+    }
+}*/
+
+/* Change the main color accentuation for various items */
+.emby-tab-button:hover,
+.mdl-radio.show-focus .mdl-radio__button:focus+.mdl-radio__circles .mdl-radio__inner-circle,
+.button-link,
+.inputLabelFocused,
+.selectLabelFocused,
+.textareaLabelFocused,
+.button-accent-flat {
+    color: #3399ff;
+}
+
+/* Change the main background color accentuation for various items */
+.navMenuOption-selected,
+.defaultCardBackground3,
+.countIndicator,
+.mdl-radio__focus-circle,
+.mdl-slider-background-lower,
+.mdl-slider::-webkit-slider-thumb,
+.mdl-slider::-moz-range-thumb,
+.mdl-slider::-ms-thumb,
+.jstree-default .jstree-wholerow-clicked {
+    background-color: #3399ff !important;
+}
+
+/* Change the color of the favorite button when hovering it */
+.cardOverlayButton-hover:hover span.favorite,
+.detailButton[is="emby-ratingbutton"]:hover {
+    color: #c33;
+}
+
+/* Change the color of the favorite button halo when hovering it */
+.cardOverlayButton-hover[is="emby-ratingbutton"]:hover,
+.listItemButton[is="emby-ratingbutton"]:hover {
+    color: #c33;
+    background-color: rgba(204, 51, 51, 0.2);
+}
+
+/* Change the color of the watched button when hovering it */
+.cardOverlayButton-hover:hover span.check,
+.detailButton[is="emby-playstatebutton"]:hover {
+    color: #5dd000;
+}
+
+/* Change the color of the watched button halo when hovering it */
+.cardOverlayButton-hover[is="emby-playstatebutton"]:hover,
+.listItemButton[is="emby-playstatebutton"]:hover {
+    color: #5dd000;
+    background-color: rgba(93, 208, 0, 0.2);
+}
+
+/* Change the color of the watched icon when it is selected */
+.playstatebutton-played,
+.playstatebutton-icon-played {
+    color: #5dd000;
+}
+
+/* Change the color of the play and resume buttons when hovering them in the media detail page */
+.detailButton[data-action="resume"]:hover,
+.detailButton[data-action="play"]:hover,
+.detailButton.btnShuffle:hover {
+    color: #f7ca18;
+}
+
+/* Change the color of the play icon when hovering a media card */
+.cardOverlayButton-hover[data-action="resume"]:hover,
+.listItemImageButton[data-action="resume"]:hover {
+    color: #f7ca18;
+    background-color: rgba(247, 202, 24, 0.2);
+}

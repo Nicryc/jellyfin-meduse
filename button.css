@@ -1,0 +1,121 @@
+@media all and (min-width: 100em) {
+
+    /* Change fab (round) buttons icon color when hovering */
+    .emby-button.fab:hover {
+        color: #a7c4bc;
+        background-color: #404040;
+    }
+
+    /***************************************************************/
+    /*     emby-button 3D effect hovering using existing span      */
+    /*               — used for every square buttons               */
+    /*            except little ones in section titles             */
+    /*                    like help or delete —                    */
+    /***************************************************************/
+
+    .emby-button.raised:not(.button-alt):not(.button-delete) {
+        padding: 0;
+        transition: transform 0.1s ease;
+    }
+
+    .emby-button.raised:not(.button-alt):not(.button-delete) span {
+        display: block;
+        border-radius: inherit;
+        padding: .9em 1em;
+        color: white;
+        transition: transform 0.1s ease;
+    }
+
+    .emby-button.raised:hover span {
+        transform: translateY(-6px);
+    }
+
+    .emby-button.raised:active span {
+        transform: translateY(-2px);
+    }
+
+    /* Color effects for gray buttons like refresh */
+    .emby-button.raised:not(.button-submit):not(.button-delete):not(.button-alt) span { 
+        background: #303030; 
+    }
+    .emby-button.raised:not(.button-submit):not(.button-delete):not(.button-alt) { 
+        background: #262626; 
+    }
+
+    /* Color effects for blue buttons like save */
+    .emby-button.raised.button-submit span { 
+        background: #3399ff; 
+    }
+    .emby-button.raised.button-submit {
+        background: #0080ff;
+    }
+
+    /**********************************************************/
+    /*     emby-button 3D effect hovering using ::before      */
+    /*       — used for little buttons in section title       */
+    /*                  like help or delete —                 */
+    /**********************************************************/
+
+    .emby-button.raised.button-alt, 
+    .emby-button.raised.button-delete {
+        transition: transform 0.1s ease;
+        transform-style: preserve-3d;
+        transform: translate3d(0, 0, 1px);
+        /* z-index doesn't work with transform (it creates separate context) so 
+        we have to use translate3D to put it behind or in front using z axis */
+    }
+
+    .emby-button.raised.button-alt::before, 
+    .emby-button.raised.button-delete::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.1s ease;
+        transform-style: preserve-3d;
+        transform: translate3d(0, 0, -1px);
+    }
+
+    .emby-button.raised.button-alt {
+        background: #303030;
+    }
+    .emby-button.raised.button-alt::before {
+        background: #262626;
+    }
+
+    .emby-button.raised.button-delete {
+        background: #f70000;
+    }
+
+    .emby-button.raised.button-delete::before {
+        background: #b30000;
+    }
+
+    .emby-button.raised.button-alt:hover, 
+    .emby-button.raised.button-delete:hover { 
+        transform: translate3d(0, -6px, 1px); 
+    }
+    .emby-button.raised.button-alt:hover::before, 
+    .emby-button.raised.button-delete:hover::before { 
+        transform: translate3d(0, 6px, -1px); 
+    }
+
+    .emby-button.raised.button-alt:active, 
+    .emby-button.raised.button-delete:active { 
+        transform: translate3d(0, -2px, 1px); 
+    }
+    .emby-button.raised.button-alt:active::before, 
+    .emby-button.raised.button-delete:active::before { 
+        transform: translate3d(0, 2px, -1px); 
+    }
+
+    /* Add some margin to block buttons so they don't overlap with the animation */
+    .emby-button.block {
+        margin: .75em 0;
+    }
+
+}

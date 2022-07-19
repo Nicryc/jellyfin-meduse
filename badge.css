@@ -1,0 +1,13 @@
+/* Rework every notification badges such as the ones found in "Notifications", Tâches planifiées" or "Activité" */
+.paperList .material-icons.listItemIcon, 
+.subtitleList .material-icons.listItemIcon {
+    background-color: #2f5d62 !important;
+    width: 2em !important;
+    line-height: 2em !important;
+    border-radius: 10px !important;
+}
+
+/* Change the padding of .paperList to align the badges better */
+.listItem-border {
+    padding: .25em .25em .25em .5em;
+}

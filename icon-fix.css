@@ -1,0 +1,85 @@
+/********************************/
+/* material-icons :not selector */
+/********************************/
+
+.material-icons:not(
+        .cardOverlayButtonIcon, /* Media card overlay icons like watched, favorite or more icons */
+        .cardImageIcon.material-icons, /* Actor card icon when no photo is available */
+        .emby-scrollbuttons-button>.material-icons, /* Left and right arrows icons to navigate in carousel */
+        .searchfields-icon, /* Search icon in the global search menu */
+        .headerButton>.material-icons, /* Header bar icons like cast, search, user or hamburger menu icons */
+        .sectionTitle+.material-icons, /* Right chevron icons in section titles */
+        .material-icons.checkboxIcon-checked, /* Check icon in checked checkboxes */
+        .material-icons.selectArrow, /* Down arrow icon in select input fields */
+        .emby-input-iconbutton .material-icons, /* Search icon next to input fields for selecting files or directories */
+        .emby-select-iconbutton .material-icons, /* Search and add icons next to select fields in "Modifier les sous-titres" */
+        .btnOpenExternalId .material-icons, /* Open in external browser icon next to input fields when editing media metadata */
+        .iconOsd .material-icons, /* Volume icon in Jellyfin web player OSD */
+        .syncPlayContainer .material-icons /* Play and sync icon in Jellyfin web player OSD when using SyncPlay */
+    ) {
+    font-size: 1.15em !important;
+    width: 1em !important;
+}
+
+.headerButton>.material-icons {
+    font-size: 1.3em !important;
+    line-height: 24.85px;
+    width: 24.85px;
+}
+
+.sectionTitle+.material-icons {
+    margin-left: 0.4em !important;
+}
+
+.material-icons.checkboxIcon-checked {
+    font-size: 1.15em !important;
+}
+
+.material-icons.selectArrow {
+    width: 1em;
+}
+
+.emby-input-iconbutton .material-icons, 
+.emby-select-iconbutton .material-icons, 
+.btnOpenExternalId .material-icons {
+    font-size: 1.5em;
+    width: 1em;
+}
+
+.emby-select-iconbutton.btnOpenUploadMenu, 
+.emby-select-iconbutton.btnSearchSubtitles {
+    margin-right: 0;
+}
+
+.emby-select-iconbutton.btnOpenUploadMenu {
+    margin-left: 0;
+}
+
+/****************************/
+/* Other icon related fixes */
+/****************************/
+
+/* Vertically align the text with its icon in lists like contextual menu or hamburger menu (default is margin-top: 0.25em) */
+.navMenuOptionText,
+.listItemBodyText {
+    margin: .125em 0 .125em !important;
+}
+
+.listItemButton {
+    line-height: 0em;
+}
+
+/* Fix the missing icon when a cast device is connected */
+.material-icons.cast_connected:before {
+    content: "\f0c1";
+}
+
+/* Fix the missing icon to open an external browser (used in the metadata editor page) */
+.material-icons.open_in_browser:before {
+    content: "\f08e";
+}
+
+/* Horizontally align the (too big) cloud download icon found in the image selection dialog because it overflows the span */
+.material-icons.cloud_download {
+    transform: translate(-2.5px, -1px);
+}
