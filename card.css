@@ -36,8 +36,3 @@
 .itemProgressBar:not(.activeSession .itemProgressBar) {
     border-radius: 10px;
 }
-
-/* Change the color of the progress bar */
-.itemProgressBarForeground:not(.activeSession .itemProgressBarForeground) {
-    background-color: #f7ca18;
-}

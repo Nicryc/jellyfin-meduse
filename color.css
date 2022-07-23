@@ -1,3 +1,18 @@
+/* Change the media played indicators color to green */
+.playedIndicator {
+    background: #5dd000;
+}
+
+/* Change the media available sources indicators color to transparent black */
+.mediaSourceIndicator {
+    background: #00000058;
+}
+
+/* Create a color gradient for the title banner on film pages or TV show pages */
+.detailPagePrimaryContainer {
+    background: linear-gradient(to right, #03315c, #281a31);
+}
+
 /* Change the main color accentuation when hovering buttons */
 @media (hover: hover) and (pointer: fine) {
     .paper-icon-button-light:hover:not(:disabled) {
@@ -119,4 +134,9 @@
 .listItemImageButton[data-action="resume"]:hover {
     color: #f7ca18;
     background-color: rgba(247, 202, 24, 0.2);
+}
+
+/* Change the progress bar color of resumable medias */
+.itemProgressBarForeground:not(.activeSession .itemProgressBarForeground) {
+    background-color: #f7ca18;
 }
