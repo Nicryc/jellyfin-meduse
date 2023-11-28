@@ -1,0 +1,215 @@
+/* Remove background on buttons Favorite, Watched and More */
+.cardOverlayButton[data-isfavorite]:hover, /* :has(span.favorite) */
+.cardOverlayButton[data-played]:hover, /* :has(span.check) */
+.cardOverlayButton[data-action="menu"]:hover /* :has(span.more_vert) */ {
+    background-color: transparent !important;
+}
+
+/* Increase the font weight when is watched or is favorite (fulfilled heart) */
+.ratingbutton-withrating .ratingbutton-icon-withrating,
+.playstatebutton-played .playstatebutton-icon-played {
+    font-weight: 900;
+}
+
+/* Allow animation to overflow the button limits (otherwise it is not visible) */
+.cardOverlayButton, .listItemButton {
+    overflow: visible;
+}
+
+/* Center the animation origin using flexbox workaround */
+span.detailButton-icon.favorite,
+span.detailButton-icon.check,
+button.listItemButton[data-isfavorite] span.material-icons.favorite,
+button.listItemButton[data-played] span.material-icons.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/********************************************/
+/* Key frames definitions (animation steps) */
+/********************************************/
+
+@keyframes heart {
+    0%,
+    17.5% {
+        font-size: 0;
+    }
+}
+
+@keyframes check {
+    0%,
+    17.5% {
+        font-size: 0;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bubble {
+    15% {
+        transform: scale(1);
+        border-color: #cc8ef5;
+        border-width: 1.75rem;
+    }
+
+    30%,
+    100% {
+        transform: scale(1);
+        border-color: #cc8ef5;
+        border-width: 0;
+    }
+}
+
+@keyframes particles {
+    0%,
+    20% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+        box-shadow: 0.25981rem -1.9rem 0 0rem #ff8080,
+            -0.25981rem -1.6rem 0 0rem #ffed80,
+            1.64747rem -0.9815rem 0 0rem #ffed80,
+            1.08894rem -1.20071rem 0 0rem #a4ff80,
+            1.79455rem 0.67608rem 0 0rem #a4ff80,
+            1.6177rem 0.10274rem 0 0rem #80ffc8,
+            0.5903rem 1.82457rem 0 0rem #80ffc8,
+            0.92829rem 1.32882rem 0 0rem #80c8ff,
+            -1.05846rem 1.59911rem 0 0rem #80c8ff,
+            -0.46014rem 1.55428rem 0 0rem #a480ff,
+            -1.91018rem 0.1695rem 0 0rem #a480ff,
+            -1.50207rem 0.60933rem 0 0rem #ff80ed,
+            -1.32349rem -1.38776rem 0 0rem #ff80ed,
+            -1.41292rem -0.79446rem 0 0rem #ff8080;
+    }
+}
+
+/***********************************************************/
+/******************** Common components ********************/
+/***********************************************************/
+/*  Currently there is an animation for the watched and    */
+/*  favorite buttons (check and heart) on the detail page, */ 
+/*  on the card overlay and on the TV show episodes list   */
+/***********************************************************/
+
+button.cardOverlayButton[data-isfavorite].ratingbutton-withrating::before,
+button.cardOverlayButton[data-isfavorite].ratingbutton-withrating::after,
+button.cardOverlayButton[data-played].playstatebutton-played::before,
+button.cardOverlayButton[data-played].playstatebutton-played::after,
+button.detailButton[data-isfavorite].ratingbutton-withrating div::before,
+button.detailButton[data-isfavorite].ratingbutton-withrating div::after,
+button.detailButton[data-played].playstatebutton-played div::before,
+button.detailButton[data-played].playstatebutton-played div::after,
+button.listItemButton[data-isfavorite].ratingbutton-withrating::before,
+button.listItemButton[data-isfavorite].ratingbutton-withrating::after,
+button.listItemButton[data-played].playstatebutton-played::before,
+button.listItemButton[data-played].playstatebutton-played::after {
+    /* will-change: font-size; */
+    animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+    animation-timing-function: ease-out;
+}
+
+button.cardOverlayButton[data-isfavorite].ratingbutton-withrating::before,
+button.cardOverlayButton[data-played].playstatebutton-played::before,
+button.detailButton[data-isfavorite].ratingbutton-withrating div::before,
+button.detailButton[data-played].playstatebutton-played div::before,
+button.listItemButton[data-isfavorite].ratingbutton-withrating::before,
+button.listItemButton[data-played].playstatebutton-played::before {
+    /* will-change: transform, border-width, border-color; */
+    animation-name: bubble;
+}
+
+button.cardOverlayButton[data-isfavorite].ratingbutton-withrating::after,
+button.cardOverlayButton[data-played].playstatebutton-played::after,
+button.detailButton[data-isfavorite].ratingbutton-withrating div::after,
+button.detailButton[data-played].playstatebutton-played div::after,
+button.listItemButton[data-isfavorite].ratingbutton-withrating::after,
+button.listItemButton[data-played].playstatebutton-played::after {
+    /* will-change: opacity, box-shadow; */
+    animation-name: particles;
+}
+
+button.cardOverlayButton[data-isfavorite]::before,
+button.cardOverlayButton[data-isfavorite]::after,
+button.detailButton[data-isfavorite] div::before,
+button.detailButton[data-isfavorite] div::after,
+button.cardOverlayButton[data-played]::before,
+button.cardOverlayButton[data-played]::after,
+button.detailButton[data-played] div::before,
+button.detailButton[data-played] div::after,
+button.listItemButton[data-isfavorite]::before,
+button.listItemButton[data-isfavorite]::after,
+button.listItemButton[data-played]::before,
+button.listItemButton[data-played]::after {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    content: '';
+}
+
+button.cardOverlayButton[data-isfavorite]::before,
+button.detailButton[data-isfavorite] div::before,
+button.cardOverlayButton[data-played]::before,
+button.detailButton[data-played] div::before,
+button.listItemButton[data-isfavorite]::before,
+button.listItemButton[data-played]::before {
+    box-sizing: border-box;
+    margin: -1.75rem;
+    border: solid 1.75rem #e2264d;
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: scale(0);
+}
+
+button.cardOverlayButton[data-isfavorite]::after,
+button.detailButton[data-isfavorite] div::after,
+button.cardOverlayButton[data-played]::after,
+button.detailButton[data-played] div::after,
+button.listItemButton[data-isfavorite]::after,
+button.listItemButton[data-played]::after {
+    margin: -0.15rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    box-shadow: 0.25981rem -2.3375rem 0 -0.15rem #ff8080,
+        -0.25981rem -2.0375rem 0 -0.15rem #ffed80,
+        1.98952rem -1.25428rem 0 -0.15rem #ffed80,
+        1.43099rem -1.47349rem 0 -0.15rem #a4ff80,
+        2.22108rem 0.77344rem 0 -0.15rem #a4ff80,
+        2.04423rem 0.20009rem 0 -0.15rem #80ffc8,
+        0.78012rem 2.21874rem 0 -0.15rem #80ffc8,
+        1.11812rem 1.723rem 0 -0.15rem #80c8ff,
+        -1.24828rem 1.99329rem 0 -0.15rem #80c8ff,
+        -0.64996rem 1.94845rem 0 -0.15rem #a480ff,
+        -2.33671rem 0.26685rem 0 -0.15rem #a480ff,
+        -1.9286rem 0.70668rem 0 -0.15rem #ff80ed,
+        -1.66554rem -1.66053rem 0 -0.15rem #ff80ed,
+        -1.75497rem -1.06723rem 0 -0.15rem #ff8080;
+}
+
+/***************************************/
+/** Favorite animation specific rules **/
+/***************************************/
+
+button.cardOverlayButton[data-isfavorite].ratingbutton-withrating span::before,
+button.detailButton[data-isfavorite].ratingbutton-withrating div span::before,
+button.listItemButton[data-isfavorite].ratingbutton-withrating span::before {
+    color: #e2264d;
+    /* will-change: font-size; */
+    animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+/**************************************/
+/** Watched animation specific rules **/
+/**************************************/
+
+button.cardOverlayButton[data-played].playstatebutton-played span::before,
+button.detailButton[data-played].playstatebutton-played div span,
+button.detailButton[data-played].playstatebutton-played div span::before,
+button.listItemButton[data-played].playstatebutton-played span::before {
+    color: #5dd000;
+    /* will-change: font-size, transform; */
+    animation: check 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}

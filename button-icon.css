@@ -1,0 +1,43 @@
+/* Change the main color accentuation when hovering buttons */
+@media (hover: hover) and (pointer: fine) {
+
+    /* Remove background when hovering for all buttons except for the ones inside a .listItem and the "Play" button on cards */
+    :not(.listItem) > .paper-icon-button-light:hover:not(:disabled):not([data-action="resume"]) {
+        color: rgba(255, 255, 255, 1);
+        background-color: transparent;
+    }
+
+    /* Change background color for buttons in a .listItem*/
+    .listItem>button {
+        border: 1px dashed transparent;
+        transition: none;
+    }
+
+    /* Change background color for buttons in a .listItem*/
+    .listItem > button:hover {
+        color: rgba(255, 255, 255, 1) !important;
+        background-color: transparent !important;
+        border-color: white;
+        border-radius: 0.9em;
+        transition: none;
+    }
+
+    /* Increase font size (of the icon) when hovering certain buttons */
+    /* .emby-input-iconbutton:hover,
+    .btnCardOptions:hover,
+    .btnOptions:hover,
+    .btnUserMenu:hover,
+    .btnCardMenu:hover,
+    .btnDeviceMenu:hover,
+    .emby-select-iconbutton:hover {
+
+        .material-icons {
+            font-weight: 900;
+        }
+    } */
+
+    /* Also change color when hovering the "More" button in detail page (it does not have class .paper-icon-button-light) */
+    .button-flat.detailButton:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}

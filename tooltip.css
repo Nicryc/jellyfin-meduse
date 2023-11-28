@@ -1,0 +1,268 @@
+@media (hover: hover) and (pointer: fine) {
+    :root {
+        --tooltip-background-color-transparent: rgba(255, 255, 255, 0.15);
+        --tooltip-background-color-solid: #282828;
+    }
+
+    /* Create (but hide by default) a custom tooltip for the following buttons */
+    .detailButton[title]:not(:disabled)::before,
+    .headerButton[title]:not(:disabled)::before,
+    .btnNextPage:not(:disabled)::before,
+    .btnPreviousPage:not(:disabled)::before,
+    .btnSelectView[title]:not(:disabled)::before,
+    .btnSort[title]:not(:disabled)::before,
+    .btnFilter[title]:not(:disabled)::before,
+    .btnNewCollection[title]:not(:disabled)::before,
+    .btnViewSettings[title]:not(:disabled)::before,
+    .emby-scrollbuttons-button[title]:not(:disabled)::before,
+    .btnPreviousTrack[title]:not(:disabled)::before,
+    .btnPreviousChapter[title]:not(:disabled)::before,
+    .btnRewind[title]:not(:disabled)::before,
+    .btnPause[title]:not(:disabled)::before,
+    .btnFastForward[title]:not(:disabled)::before,
+    .btnNextChapter[title]:not(:disabled)::before,
+    .btnNextTrack[title]:not(:disabled)::before,
+    .btnSubtitles[title]:not(:disabled)::before,
+    .btnAudio[title]:not(:disabled)::before,
+    .buttonMute[title]:not(:disabled)::before,
+    .btnVideoOsdSettings[title]:not(:disabled)::before,
+    .btnFullscreen[title]:not(:disabled)::before,
+    .btnPlayPause[title]:not(:disabled)::before,
+    .btnStop[title]:not(:disabled)::before,
+    .btnToggleFullscreen[title]:not(:disabled)::before,
+    .btnShuffleQueue[title]:not(:disabled)::before,
+    .btnRepeat[title]:not(:disabled)::before,
+    .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:not(:disabled)::before {
+        content: attr(title);
+        background-color: var(--tooltip-background-color-transparent);
+        padding: 0.3em;
+        transform: scale(0);
+        position: absolute;
+        z-index: -1;
+    }
+
+    /* Display the custom tooltip when hovering */
+    .detailButton[title]:hover:not(:disabled)::before,
+    .headerButton[title]:hover:not(:disabled)::before,
+    .btnNextPage:hover:not(:disabled)::before,
+    .btnPreviousPage:hover:not(:disabled)::before,
+    .btnSelectView[title]:hover:not(:disabled)::before,
+    .btnSort[title]:hover:not(:disabled)::before,
+    .btnFilter[title]:hover:not(:disabled)::before,
+    .btnNewCollection[title]:hover:not(:disabled)::before,
+    .btnViewSettings[title]:hover:not(:disabled)::before,
+    .emby-scrollbuttons-button[title]:hover:not(:disabled)::before,
+    .btnPreviousTrack[title]:hover:not(:disabled)::before,
+    .btnPreviousChapter[title]:hover:not(:disabled)::before,
+    .btnRewind[title]:hover:not(:disabled)::before,
+    .btnPause[title]:hover:not(:disabled)::before,
+    .btnFastForward[title]:hover:not(:disabled)::before,
+    .btnNextChapter[title]:hover:not(:disabled)::before,
+    .btnNextTrack[title]:hover:not(:disabled)::before,
+    .btnSubtitles[title]:hover:not(:disabled)::before,
+    .btnAudio[title]:hover:not(:disabled)::before,
+    .buttonMute[title]:hover:not(:disabled)::before,
+    .btnVideoOsdSettings[title]:hover:not(:disabled)::before,
+    .btnFullscreen[title]:hover:not(:disabled)::before,
+    .btnPlayPause[title]:hover:not(:disabled)::before,
+    .btnStop[title]:hover:not(:disabled)::before,
+    .btnToggleFullscreen[title]:hover:not(:disabled)::before,
+    .btnShuffleQueue[title]:hover:not(:disabled)::before,
+    .btnRepeat[title]:hover:not(:disabled)::before,
+    .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:hover:not(:disabled)::before {
+        transform: scale(1);
+        transform-origin: center;
+        transition: .2s;
+        border-radius: 5px;
+    }
+
+    /* Override the hidden overflow for the following buttons, otherwise the tooltips aren't displayed (because outside the button itself) */
+    .headerLeft,
+    .headerRight,
+    .headerButton,
+    .btnNextPage:not(:disabled),
+    .btnPreviousPage:not(:disabled),
+    .btnSelectView[title]:not(:disabled),
+    .btnSort[title]:not(:disabled),
+    .btnFilter[title]:not(:disabled),
+    .btnNewCollection[title]:not(:disabled),
+    .btnViewSettings[title]:not(:disabled),
+    .emby-scrollbuttons-button[title]:not(:disabled),
+    .btnPreviousTrack[title]:not(:disabled),
+    .btnPreviousChapter[title]:not(:disabled),
+    .btnRewind[title]:not(:disabled),
+    .btnPause[title]:not(:disabled),
+    .btnFastForward[title]:not(:disabled),
+    .btnNextChapter[title]:not(:disabled),
+    .btnNextTrack[title]:not(:disabled),
+    .btnSubtitles[title]:not(:disabled),
+    .btnAudio[title]:not(:disabled),
+    .buttonMute[title]:not(:disabled),
+    .btnVideoOsdSettings[title]:not(:disabled),
+    .btnFullscreen[title]:not(:disabled),
+    .btnPlayPause[title]:not(:disabled),
+    .btnStop[title]:not(:disabled),
+    .btnToggleFullscreen[title]:not(:disabled),
+    .btnShuffleQueue[title]:not(:disabled),
+    .btnRepeat[title]:not(:disabled),
+    .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:not(:disabled) {
+        overflow: unset;
+    }
+
+    /*********************************/
+    /* Detail page specific settings */
+    /*********************************/
+
+    /* Custom tooltip position for buttons in the detail page */
+    .detailButton[title]:not(:disabled)::before {
+        white-space: nowrap;
+        top: -60%;
+    }
+
+    /* Yellow background color for "Play" button */
+    .detailButton[title='Reprendre']:not(:disabled)::before {
+        background-color: rgba(247, 202, 24, 0.15);
+    }
+
+    /* Yellow background color for "Play" button */
+    .detailButton[title='Lire']:not(:disabled)::before {
+        background-color: rgba(247, 202, 24, 0.15);
+    }
+
+    /* Green background color for "Play" button */
+    .detailButton[title='Marquer comme lu']:not(:disabled)::before {
+        background-color: rgba(93, 208, 0, 0.15);
+    }
+
+    /* Red background color for "Play" button */
+    .detailButton[title='Ajouter aux favoris']:not(:disabled)::before {
+        background-color: rgba(204, 51, 51, 0.15);
+    }
+
+    /****************************/
+    /* Header specific settings */
+    /****************************/
+
+    /* Custom tooltip position for buttons in the header */
+    .headerButton[title]:not(:disabled)::before {
+        top: 110%;
+    }
+
+    /* Override the contain property for the header, otherwise the tooltips aren't displayed (because outside the header itself) */
+    .skinHeader {
+        contain: layout style;
+    }
+
+    /*************************************/
+    /* Top bar filters specific settings */
+    /*************************************/
+
+    /* Custom tooltip position for buttons above the library items */
+    .btnNextPage:not(:disabled)::before,
+    .btnPreviousPage:not(:disabled)::before,
+    .btnSelectView[title]:not(:disabled)::before,
+    .btnSort[title]:not(:disabled)::before,
+    .btnFilter[title]:not(:disabled)::before,
+    .btnNewCollection[title]:not(:disabled)::before {
+        top: -100%;
+        white-space: nowrap;
+    }
+
+    /* Custom settings for More button in generic libraries top button line */
+    .listTextButton-autohide.btnViewSettings {
+        justify-content: center;
+        font-weight: initial;
+    }
+
+    /****************************************/
+    /* Navigation buttons specific settings */
+    /****************************************/
+
+    /* Setting a content for the tooltip because button .btnNextPage doesn't have a title property */
+    .btnNextPage:not(:disabled)::before {
+        content: "Suivant";
+    }
+
+    /* Setting a content for the tooltip because button .btnPreviousPage doesn't have a title property */
+    .btnPreviousPage:not(:disabled)::before {
+        content: "Précédent";
+    }
+
+    /* Custom tooltip position for horizontal navigation buttons and some other buttons */
+    .emby-scrollbuttons-button[title]:not(:disabled)::before,
+    .listTextButton-autohide[title]:not(:disabled).btnViewSettings::before {
+        top: -65%;
+        white-space: nowrap;
+    }
+
+    /**************************************/
+    /* OSD media player specific settings */
+    /**************************************/
+
+    /* Custom tooltip position for buttons in OSD media player */
+    .btnPreviousTrack[title]:not(:disabled)::before,
+    .btnPreviousChapter[title]:not(:disabled)::before,
+    .btnRewind[title]:not(:disabled)::before,
+    .btnPause[title]:not(:disabled)::before,
+    .btnFastForward[title]:not(:disabled)::before,
+    .btnNextChapter[title]:not(:disabled)::before,
+    .btnNextTrack[title]:not(:disabled)::before,
+    .btnSubtitles[title]:not(:disabled)::before,
+    .btnAudio[title]:not(:disabled)::before,
+    .buttonMute[title]:not(:disabled)::before,
+    .btnVideoOsdSettings[title]:not(:disabled)::before,
+    .btnFullscreen[title]:not(:disabled)::before {
+        background-color: var(--tooltip-background-color-solid);
+        top: -100%;
+        white-space: nowrap;
+    }
+
+    .btnPreviousTrack[title]:not(:disabled),
+    .btnPreviousChapter[title]:not(:disabled),
+    .btnRewind[title]:not(:disabled),
+    .btnPause[title]:not(:disabled),
+    .btnFastForward[title]:not(:disabled),
+    .btnNextChapter[title]:not(:disabled),
+    .btnNextTrack[title]:not(:disabled),
+    .btnSubtitles[title]:not(:disabled),
+    .btnAudio[title]:not(:disabled),
+    .buttonMute[title]:not(:disabled),
+    .btnVideoOsdSettings[title]:not(:disabled),
+    .btnFullscreen[title]:not(:disabled) {
+        z-index: 2;
+    }
+
+    /*****************************************/
+    /* Remote media player specific settings */
+    /*****************************************/
+
+    /* Scale Play button tooltip in remote media control */
+    .btnPlayPause::before {
+        font-size: 0.5em;
+    }
+
+    /* Custom tooltip position for buttons in remote media control */
+    .btnPlayPause[title]:not(:disabled)::before,
+    .btnStop[title]:not(:disabled)::before,
+    .btnToggleFullscreen[title]:not(:disabled)::before,
+    .btnShuffleQueue[title]:not(:disabled)::before,
+    .btnRepeat[title]:not(:disabled)::before,
+    .btnRewind.btnPlayStateCommand[title]:not(:disabled)::before,
+    .btnPreviousTrack.btnPlayStateCommand[title]:not(:disabled)::before,
+    .btnNextTrack.btnPlayStateCommand[title]:not(:disabled)::before,
+    .btnFastForward.btnPlayStateCommand[title]:not(:disabled)::before,
+    .btnSubtitles.btnPlayStateCommand[title]:not(:disabled)::before,
+    .nowPlayingSecondaryButtons .buttonMute[title]:not(:disabled)::before,
+    .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:not(:disabled)::before {
+        background-color: var(--tooltip-background-color-transparent);
+        top: 125%;
+        white-space: nowrap;
+    }
+
+    /* Custom settings for Favorite button in remote media player */
+    .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"] {
+        display: flex;
+        justify-content: center;
+        font-weight: initial;
+    }
+}

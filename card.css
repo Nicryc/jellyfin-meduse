@@ -1,3 +1,8 @@
+:root {
+    --list-item-image-large-border-radius: 10px;
+    --list-item-wrapper-padding: 0.5em
+}
+
 /* Change the border radius of media cards */
 .cardBox:not(.visualCardBox) .cardImageContainer.cardContent,
 .cardBox:not(.visualCardBox) .cardPadder,
@@ -35,4 +40,43 @@
 .itemProgressBarForeground:not(.activeSession .itemProgressBarForeground),
 .itemProgressBar:not(.activeSession .itemProgressBar) {
     border-radius: 10px;
+}
+
+/*****************************************************************************/
+/* TV show season detail page specific settings (like Breaking Bad Season 2) */
+/*****************************************************************************/
+
+/* Add a border radius to the episode images */
+.listItemImage.listItemImage-large {
+    border-radius: var(--list-item-image-large-border-radius);
+}
+
+/* Add a border radius to the episode list container */
+.listItem.listItem-largeImage.listItem-withContentWrapper {
+    padding: var(--list-item-wrapper-padding);
+    border-radius: calc(var(--list-item-image-large-border-radius) + var(--list-item-wrapper-padding)) !important;
+}
+
+/* Set a max height for the episode overviews */
+.listItemImage-large + .listItemBody {
+    max-height: 13vw;
+    box-sizing: border-box;
+}
+
+/* Change color on hover for the episode titles */
+.listItem.listItem-largeImage.listItem-withContentWrapper:hover .listItemBodyText:first-child {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Change color on hover for the episode descriptions */
+.listItem.listItem-largeImage.listItem-withContentWrapper:hover .listItemBodyText.listItem-overview {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Crop the text when episode description is bigger than 8 lines */
+.listItem.listItem-largeImage.listItem-withContentWrapper .listItemBodyText.listItem-overview {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    text-align: justify;
 }

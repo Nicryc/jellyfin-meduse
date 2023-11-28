@@ -1,10 +1,11 @@
-/* Rework every notification badges such as the ones found in "Notifications", Tâches planifiées" or "Activité" */
+/* Rework every notification badges such as the ones found in "Notifications", "Tâches planifiées" or "Activité" */
 .paperList .material-icons.listItemIcon, 
 .subtitleList .material-icons.listItemIcon {
     background-color: #2f5d62 !important;
     width: 2em !important;
     line-height: 2em !important;
     border-radius: 10px !important;
+    font-size: 1.15em !important;
 }
 
 /* Change the padding of .paperList to align the badges better */
