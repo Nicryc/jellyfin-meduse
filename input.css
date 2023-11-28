@@ -94,3 +94,9 @@
     text-align: center;
     padding: .5em 1em;
 }
+
+.checkboxIcon-checked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

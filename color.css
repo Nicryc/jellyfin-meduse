@@ -1,3 +1,23 @@
+/* Align played indicator badge inside card */
+.indicatorIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add some margin to this played indicator badge */
+/* div.cardScalable button.cardImageContainer.coveredImage.cardContent.itemAction .cardIndicators, 
+div.cardScalable button.cardImageContainer.coveredImage.cardContent.itemAction .mediaSourceIndicator {
+    margin: 5px;
+    position: unset;
+} */
+
+/* Align the icon in the played indicator badge */
+/* .cardImageContainer {
+    justify-content: space-between;
+    align-items: flex-start;
+} */
+
 /* Change the media played indicators color to green */
 .playedIndicator {
     background: #5dd000;
@@ -13,58 +33,19 @@
     background: linear-gradient(to right, #03315c, #281a31);
 }
 
-/* Change the main color accentuation when hovering buttons */
-@media (hover: hover) and (pointer: fine) {
-    .paper-icon-button-light:hover:not(:disabled) {
-        color: rgba(255, 255, 255, 1);
-        background-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .button-flat.detailButton:hover {
-        color: rgba(255, 255, 255, 1);
-    }
+/* Align play icon in the middle of the circle (changing the center of the triangle */
+.material-icons.play_arrow::before {
+    width: 33%;
 }
 
-/* V1 Animation - expanding hover effect */
-@media (hover: hover) and (pointer: fine) {
-    .detailButton:hover:not(:disabled)::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: scale(1);
-        transform-origin: center;
-        transition: .2s;
-    }
-
-    .detailButton:not(:disabled)::before {
-        content: "";
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        aspect-ratio: 1/1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        z-index: -1
-    }
+.cardOverlayButtonIcon.play_arrow {
+    width: 100% !important;
 }
 
 /* Make the buttons in media detail pages (like play, add to favorite, mark as watched) square */
 .detailButton:not(:disabled) {
     aspect-ratio: 1/1
 }
-
-/* V2 Animation - shrinking hover effect */
-/*@media (hover: hover) and (pointer: fine) {
-    .detailButton:hover:not(:disabled) {
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-    }
-}*/
 
 /* Change the main color accentuation for various items */
 .emby-tab-button:hover,
@@ -139,4 +120,70 @@
 /* Change the progress bar color of resumable medias */
 .itemProgressBarForeground:not(.activeSession .itemProgressBarForeground) {
     background-color: #f7ca18;
+}
+
+/* Change background color on hover for metadata editor left drawer */
+.jstree-wholerow-hovered {
+    background-color: #252528 !important;
+}
+
+/* Change background color when selected for metadata editor left drawer */
+.jstree-wholerow-clicked {
+    background-color: #3399ff !important;
+}
+
+/* Change icons color for metadata editor left drawer */
+.material-icons.metadataSidebarIcon.folder,
+.material-icons.metadataSidebarIcon.movie,
+.material-icons.metadataSidebarIcon.lock {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Change background color when selected for dashboard left drawer */
+.navMenuOption-selected {
+    background-color: #3399ff !important;
+}
+
+/* Change text color on hover for section title (ex: in Genres tab) */
+.sectionTitleTextButton.button-flat:hover,
+.button-flat.listTextButton-autohide:hover {
+    color: white !important;
+}
+
+/****************************/
+/* Contextual menu settings */
+/****************************/
+
+/* Add a border radius to contextual menu container */
+.focuscontainer.actionSheet.centeredDialog.opened {
+    border-radius: 0.8em !important;
+}
+
+/* Style contextual menu list item */
+.listItem.listItem-button.actionSheetMenuItem {
+    margin: 0 0.4em;
+    width: auto;
+    padding: 0;
+}
+
+/* Add a border radius to contextual menu list item when hovering */
+.listItem.listItem-button.actionSheetMenuItem:hover {
+    border-radius: 0.4em !important;
+}
+
+/* Change contextual menu list item icons color when hovering */
+.listItem.listItem-button.actionSheetMenuItem:hover span.material-icons {
+    color: white;
+}
+
+/* Hide contextual menu scrollbar */
+.actionSheetScroller.scrollY {
+    scrollbar-width: none;
+}
+
+/* Style contextual menu list separator */
+.actionsheetDivider {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    background: rgba(255, 255, 255, 0.05);
 }

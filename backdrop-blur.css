@@ -8,16 +8,6 @@
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* Remove the dark background created by .itemBackdrop */
-.layout-desktop .itemBackdrop::after {
-    background: none;
-}
-
-/* Remove the upper background image in media detail pages */
-.itemBackdrop {
-    background-image: none !important;
-}
-
 /* Remove the title section background to make it transparent in media detail pages */
 .detailPagePrimaryContainer {
     background: none;
@@ -26,4 +16,25 @@
 /* Remove the header background to make it transparent only in media detail pages */
 .skinHeader.semiTransparent.skinHeader-blurred {
     background: none;
+}
+
+/* Between 62.5 and 68.75 em */
+@media (min-width: 62.5em) and (max-width: 68.75em) {
+    /* Force the display of the film logo */
+    .detailLogo {
+        display: initial;
+    }
+}
+
+/* On wide screens (bigger than 62.5em) */
+@media (min-width: 62.5em) {
+    /* Remove the upper background image in media detail pages */
+    .itemBackdrop {
+        background-image: none !important;
+    }
+
+    /* Remove the dark background created by .itemBackdrop */
+    .layout-desktop .itemBackdrop::after {
+        background: none;
+    }
 }

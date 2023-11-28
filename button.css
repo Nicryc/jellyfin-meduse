@@ -1,4 +1,4 @@
-@media all and (min-width: 100em) {
+@media all and (min-width: 100em) and (hover: hover) {
 
     /* Change fab (round) buttons icon color when hovering */
     .emby-button.fab:hover {
@@ -6,67 +6,22 @@
         background-color: #404040;
     }
 
-    /***************************************************************/
-    /*     emby-button 3D effect hovering using existing span      */
-    /*               — used for every square buttons               */
-    /*            except little ones in section titles             */
-    /*                    like help or delete —                    */
-    /***************************************************************/
-
-    .emby-button.raised:not(.button-alt):not(.button-delete) {
-        padding: 0;
-        transition: transform 0.1s ease;
-    }
-
-    .emby-button.raised:not(.button-alt):not(.button-delete) span {
-        display: block;
-        border-radius: inherit;
-        padding: .9em 1em;
-        color: white;
-        transition: transform 0.1s ease;
-    }
-
-    .emby-button.raised:hover span {
-        transform: translateY(-6px);
-    }
-
-    .emby-button.raised:active span {
-        transform: translateY(-2px);
-    }
-
-    /* Color effects for gray buttons like refresh */
-    .emby-button.raised:not(.button-submit):not(.button-delete):not(.button-alt) span { 
-        background: #303030; 
-    }
-    .emby-button.raised:not(.button-submit):not(.button-delete):not(.button-alt) { 
-        background: #262626; 
-    }
-
-    /* Color effects for blue buttons like save */
-    .emby-button.raised.button-submit span { 
-        background: #3399ff; 
-    }
-    .emby-button.raised.button-submit {
-        background: #0080ff;
+    /* Add some margin to block buttons so they don't overlap with the animation */
+    .emby-button.block {
+        margin: .75em 0;
     }
 
     /**********************************************************/
     /*     emby-button 3D effect hovering using ::before      */
-    /*       — used for little buttons in section title       */
-    /*                  like help or delete —                 */
+    /*               — used for every square buttons          */
     /**********************************************************/
 
-    .emby-button.raised.button-alt, 
-    .emby-button.raised.button-delete {
-        transition: transform 0.1s ease;
+    .emby-button.raised {
         transform-style: preserve-3d;
-        transform: translate3d(0, 0, 1px);
-        /* z-index doesn't work with transform (it creates separate context) so 
-        we have to use translate3D to put it behind or in front using z axis */
+        transition: transform 0.05s ease;
     }
 
-    .emby-button.raised.button-alt::before, 
-    .emby-button.raised.button-delete::before {
+    .emby-button.raised::before {
         content: "";
         position: absolute;
         top: 0;
@@ -75,47 +30,55 @@
         border-radius: inherit;
         width: 100%;
         height: 100%;
-        transition: transform 0.1s ease;
-        transform-style: preserve-3d;
+        transition: transform 0.05s ease;
         transform: translate3d(0, 0, -1px);
+        /* z-index doesn't work with transform (it creates a separate context) so 
+        we have to use translate3D to put it behind or in front using Z axis */
     }
 
-    .emby-button.raised.button-alt {
-        background: #303030;
+    /* Move button up when it is hovered to simulate a real 3D tangible button */
+    .emby-button.raised:hover {
+        transform: translate3d(0, -6px, 1px);
     }
-    .emby-button.raised.button-alt::before {
+
+    .emby-button.raised:hover::before {
+        transform: translate3d(0, 6px, -1px);
+    }
+
+    /* Move button down when it is clicked to simulate a physical push */
+    .emby-button.raised:active {
+        transform: translate3d(0, -2px, 1px);
+    }
+
+    .emby-button.raised:active::before {
+        transform: translate3d(0, 2px, -1px);
+    }
+
+    /* Color set for gray buttons like refresh */
+    .emby-button.raised:not(.button-submit):not(.button-delete)::before {
         background: #262626;
     }
 
+    .emby-button.raised:not(.button-submit):not(.button-delete) {
+        background: #303030;
+    }
+
+    /* Color set for blue buttons like save */
+    .emby-button.raised.button-submit::before {
+        background: #0080ff;
+    }
+
+    .emby-button.raised.button-submit {
+        background: #3399ff;
+    }
+
+    /* Color set for red buttons like delete */
     .emby-button.raised.button-delete {
         background: #f70000;
     }
 
     .emby-button.raised.button-delete::before {
         background: #b30000;
-    }
-
-    .emby-button.raised.button-alt:hover, 
-    .emby-button.raised.button-delete:hover { 
-        transform: translate3d(0, -6px, 1px); 
-    }
-    .emby-button.raised.button-alt:hover::before, 
-    .emby-button.raised.button-delete:hover::before { 
-        transform: translate3d(0, 6px, -1px); 
-    }
-
-    .emby-button.raised.button-alt:active, 
-    .emby-button.raised.button-delete:active { 
-        transform: translate3d(0, -2px, 1px); 
-    }
-    .emby-button.raised.button-alt:active::before, 
-    .emby-button.raised.button-delete:active::before { 
-        transform: translate3d(0, 2px, -1px); 
-    }
-
-    /* Add some margin to block buttons so they don't overlap with the animation */
-    .emby-button.block {
-        margin: .75em 0;
     }
 
 }

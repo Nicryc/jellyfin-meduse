@@ -1,0 +1,181 @@
+/***********************************/
+/* V1 - Thin yellow bar with round */
+/***********************************/
+
+:root {
+    --mdl-slider-container-height: 1.25em;
+    --mdl-slider-background-flex-height: 0.3em;
+    --mdl-slider-background-flex-height-hover: 0.5em;
+    --slider-primary-color: #f7ca18;
+}
+
+/* Define a border radius for pre-existing slider tooltip on hover */
+.sliderBubble {
+    border-radius: 10px;
+}
+
+/* Style the slider thumb (the grabable bullet) */
+.mdl-slider::-webkit-slider-thumb,
+.mdl-slider::-moz-range-thumb {
+    background-color: var(--slider-primary-color);
+    cursor: default;
+    height: 1em;
+    width: 1em;
+}
+
+/* Remove thumb scaling up when hovering */
+.mdl-slider-hoverthumb:hover::-webkit-slider-thumb,
+.mdl-slider-hoverthumb:hover::-moz-range-thumb {
+    transform: none;
+}
+
+/* Change cursor when hovering the slider but not hovering the thumb */
+.mdl-slider:hover {
+    cursor: default;
+}
+
+/* Change cursor when hovering the thumb */
+.mdl-slider:hover::-moz-range-thumb,
+.mdl-slider:hover::-webkit-slider-thumb {
+    cursor: grab;
+}
+
+/* Change cursor when sliding the thumb */
+.mdl-slider:active,
+.mdl-slider:active::-moz-range-thumb,
+.mdl-slider:active::-webkit-slider-thumb {
+    cursor: grabbing;
+}
+
+/* Already played part in slider */
+.mdl-slider-background-lower {
+    background-color: var(--slider-primary-color);
+    border-radius: 50px;
+}
+
+/* Define height and radius for the slider */
+.mdl-slider-background-flex {
+    height: var(--mdl-slider-background-flex-height);
+    border-radius: 50px;
+    margin-top: 0;
+}
+
+/* Increase height when slider is hovered */
+.mdl-slider-container:hover .mdl-slider-background-flex {
+    height: var(--mdl-slider-background-flex-height-hover);
+}
+
+/* Position the slider container astride the bottom player hence half its height (1.25em) */
+.mdl-slider-container.nowPlayingBarPositionContainer {
+    top: calc(var(--mdl-slider-container-height) / -2);
+}
+
+/* Position the slider correctly on the page according to its height */
+.mdl-slider-background-flex-container {
+    top: calc(50% - var(--mdl-slider-background-flex-height) / 2);
+}
+
+/* Position the slider correctly on the page according to its increased height when hovering */
+.mdl-slider-container:hover .mdl-slider-background-flex-container {
+    top: calc(50% - var(--mdl-slider-background-flex-height-hover) / 2);
+}
+
+/* Add some margin for the remote media control slider */
+.nowPlayingInfoControls > .sliderContainer {
+    margin-bottom: 1em;
+}
+
+/* Override default margin for the remote media control slider to align it correctly */
+.nowPlayingPositionSliderContainer.mdl-slider-container {
+    margin: 0em 1em;
+}
+
+/* Override default margin for the OSD media player slider to align it correctly */
+.osdControls .sliderContainer {
+    margin: 0.25em 0 !important;
+}
+
+
+/**********************************/
+/* V2 - Yellow large range slider */ 
+/**********************************/
+
+/* .sliderBubble {
+    border-radius: 10px;
+}
+
+.mdl-slider::-webkit-slider-thumb,
+.mdl-slider::-moz-range-thumb {
+    background-color: #202020;
+    cursor: default;
+    height: 1.25em;
+    width: 1.25em;
+    border: 2px solid #f7ca18;
+}
+
+.mdl-slider-hoverthumb:hover::-webkit-slider-thumb,
+.mdl-slider-hoverthumb:hover::-moz-range-thumb {
+    transform: none;
+    border: 2px solid #f7ca18;
+}
+
+.mdl-slider {
+    cursor: default;
+} */
+
+/* Already played part in slider */
+/* .mdl-slider-background-lower {
+    background-color: #f7ca18;
+    padding-right: calc(1.25em + 4px);
+    margin-left: calc(-0.75em - 4px);
+    border-radius: 100px;
+}
+
+.mdl-slider-background-flex-inner {
+    margin: 0 0.75em;
+}
+
+.nowPlayingBarPositionContainer {
+    top: -1.284em !important;
+}
+
+.mdl-slider {
+    height: 100%;
+}
+
+.mdl-slider-background-flex-container {
+    top: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.mdl-slider-background-flex {
+    margin-top: 0;
+    height: 100%;
+    border-radius: 100px;
+}
+
+div.nowPlayingInfoControls div.sliderContainer {
+    align-items: center;
+
+    .positionTime {
+        height: fit-content;
+    }
+}
+
+.nowPlayingPositionSliderContainer {
+    margin: 1em;
+}
+
+.nowPlayingVolumeSliderContainer {
+    margin-left: 0.3em;
+}
+
+.nowPlayingBarVolumeSliderContainer {
+    margin-left: 0.5em;
+} */
+
+/* Fix for slider in the "Subtitles" settings page */
+/* .sliderContainer-settings .mdl-slider-container {
+    height: unset;
+} */

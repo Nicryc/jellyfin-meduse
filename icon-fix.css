@@ -15,7 +15,9 @@
         .emby-select-iconbutton .material-icons, /* Search and add icons next to select fields in "Modifier les sous-titres" */
         .btnOpenExternalId .material-icons, /* Open in external browser icon next to input fields when editing media metadata */
         .iconOsd .material-icons, /* Volume icon in Jellyfin web player OSD */
-        .syncPlayContainer .material-icons /* Play and sync icon in Jellyfin web player OSD when using SyncPlay */
+        .syncPlayContainer .material-icons, /* Play and sync icon in Jellyfin web player OSD when using SyncPlay */
+        .paperList .listItem .material-icons.listItemIcon, /* Badges in settings lists */
+        .subtitleList .listItem .material-icons.listItemIcon /* Badges in settings lists */
     ) {
     font-size: 1.15em !important;
     width: 1em !important;
@@ -55,6 +57,12 @@
     margin-left: 0;
 }
 
+.material-icons.chevron_right,
+.material-icons.chevron_left {
+    width: 1em;
+    height: 1em;
+}
+
 /****************************/
 /* Other icon related fixes */
 /****************************/
@@ -65,9 +73,9 @@
     margin: .125em 0 .125em !important;
 }
 
-.listItemButton {
+/* .listItemButton {
     line-height: 0em;
-}
+} */
 
 /* Fix the missing icon when a cast device is connected */
 .material-icons.cast_connected:before {
