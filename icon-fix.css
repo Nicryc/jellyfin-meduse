@@ -87,6 +87,16 @@
     content: "\f08e";
 }
 
+/* Fix the missing icon to filter media */
+.material-icons.filter_alt:before {
+    content: "\f0b0";
+}
+
+/* Fix the missing icon to select a media */
+.material-icons.library_add_check:before {
+    content: "\f055";
+}
+
 /* Horizontally align the (too big) cloud download icon found in the image selection dialog because it overflows the span */
 .material-icons.cloud_download {
     transform: translate(-2.5px, -1px);

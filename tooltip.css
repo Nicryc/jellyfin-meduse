@@ -32,6 +32,8 @@
     .btnToggleFullscreen[title]:not(:disabled)::before,
     .btnShuffleQueue[title]:not(:disabled)::before,
     .btnRepeat[title]:not(:disabled)::before,
+    .btnShuffle[title]:not(:disabled)::before,
+    .btnPlayAll[title]:not(:disabled)::before,
     .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:not(:disabled)::before {
         content: attr(title);
         background-color: var(--tooltip-background-color-transparent);
@@ -69,6 +71,8 @@
     .btnToggleFullscreen[title]:hover:not(:disabled)::before,
     .btnShuffleQueue[title]:hover:not(:disabled)::before,
     .btnRepeat[title]:hover:not(:disabled)::before,
+    .btnShuffle[title]:hover:not(:disabled)::before,
+    .btnPlayAll[title]:hover:not(:disabled)::before,
     .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:hover:not(:disabled)::before {
         transform: scale(1);
         transform-origin: center;
@@ -105,6 +109,8 @@
     .btnToggleFullscreen[title]:not(:disabled),
     .btnShuffleQueue[title]:not(:disabled),
     .btnRepeat[title]:not(:disabled),
+    .btnShuffle[title]:not(:disabled),
+    .btnPlayAll[title]:not(:disabled),
     .nowPlayingPageUserDataButtons button[is="emby-ratingbutton"]:not(:disabled) {
         overflow: unset;
     }
@@ -163,7 +169,9 @@
     .btnSelectView[title]:not(:disabled)::before,
     .btnSort[title]:not(:disabled)::before,
     .btnFilter[title]:not(:disabled)::before,
-    .btnNewCollection[title]:not(:disabled)::before {
+    .btnNewCollection[title]:not(:disabled)::before,
+    .btnShuffle[title]:not(:disabled)::before,
+    .btnPlayAll[title]:not(:disabled)::before {
         top: -100%;
         white-space: nowrap;
     }

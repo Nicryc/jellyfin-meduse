@@ -8,8 +8,13 @@
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* Remove the title section background to make it transparent in media detail pages */
+/* Remove the description section background to make it transparent in media detail pages */
 .detailPagePrimaryContainer {
+    background: none;
+}
+
+/* Remove the title section background to make it transparent in media detail pages */
+.detailRibbon {
     background: none;
 }
 
