@@ -1,6 +1,12 @@
 /* Add a blur filter to the background image */
+/* 1. By default, apply the blur */
 .backdropImage {
     filter: blur(50px) saturate(170%) contrast(150%) brightness(50%);
+}
+
+/* 2. If the document HAS an element with .noBackdropTransparency, remove the filter from .backdropImage */
+:root:has(.libraryPage.itemDetailPage.noBackdropTransparency) .backdropImage {
+    filter: none;
 }
 
 /* Change the opacity of the background image */
@@ -8,9 +14,14 @@
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* Remove the description section background to make it transparent in media detail pages */
-.detailPagePrimaryContainer {
+/* 1. By default, make the details section container transparent in media detail page*/
+.detailPageWrapperContainer .detailPagePrimaryContainer {
     background: none;
+}
+
+/* 2. If the parent HAS the class, force the background back to visible */
+.noBackdropTransparency .detailPageWrapperContainer .detailPagePrimaryContainer {
+    background: var(--jf-palette-background-default, #101010);
 }
 
 /* Remove the title section background to make it transparent in media detail pages */
